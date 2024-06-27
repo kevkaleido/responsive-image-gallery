@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
+            const color = button.getAttribute('data-color'); // Retrieve data-color attribute
+            document.body.style.backgroundColor = color; // Change body background color
+
             galleryImages.forEach(img => {
                 if (filter === 'all' || img.getAttribute('data-category') === filter) {
                     img.style.display = 'block';
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
         lightboxImg.src = galleryImages[currentImageIndex].src;
     });
- 
+
     nextBtn.addEventListener('click', () => {
         currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
         lightboxImg.src = galleryImages[currentImageIndex].src;

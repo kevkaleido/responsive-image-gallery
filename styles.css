@@ -1,17 +1,30 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(7, 103, 134);
+    background-color: gray;
+    
 }
 
 .filter-buttons {
     text-align: center;
     margin: 20px 0;
+
 }
 
 .filter-buttons button {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.filter-buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.filter-buttons button:active {
+    transform: scale(0.9);
 }
 
 .filter-buttons button[data-filter="all"]:hover {
@@ -20,17 +33,17 @@ body {
 
 /* Target the button with data-filter="red" */
 .filter-buttons button[data-filter="red"]:hover {
-    background-color: rgb(209, 52, 52); /* Change to desired hover color */
+    background-color: rgb(209, 52, 52, 0.9); /* Change to desired hover color */
 }
 
 /* Target the button with data-filter="green" */
 .filter-buttons button[data-filter="green"]:hover {
-    background-color: rgb(36, 106, 36); /* Change to desired hover color */
+    background-color: rgb(36, 106, 36, 0.9); /* Change to desired hover color */
 }
 
 /* Target the button with data-filter="blue" */
 .filter-buttons button[data-filter="blue"]:hover {
-    background-color: rgb(81, 81, 235); /* Change to desired hover color */
+    background-color: rgb(0, 93, 187, 0.9); /* Change to desired hover color */
 }
 
 .gallery {
@@ -47,6 +60,8 @@ body {
     cursor: pointer;
     transition: transform 0.3s;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
 }
 
 .gallery img:hover {
@@ -117,4 +132,39 @@ body {
 .prev:hover,
 .next:hover {
     background-color: rgba(0,0,0,0.8);
+}
+
+#footer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    color: #fff;
+}
+#footer p {
+   
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#footer p a {
+    color: white;
+    text-decoration: none;
+}
+#footer p:hover {
+    background-color: #005dbb;
+    transform: scale(1.05);
+}
+#footer p:active {
+    transform: scale(0.95);
 }
